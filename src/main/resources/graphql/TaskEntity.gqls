@@ -1,0 +1,12 @@
+type TaskEntity {
+  id: ID!
+  tittle: String
+  description: String
+  comments: [String]
+  status: Boolean
+  assignedTo: String
+  projectId: String
+  deadline: String
+  updatedAt: String
+  createdAt: String
+}

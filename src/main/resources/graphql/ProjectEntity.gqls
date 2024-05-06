@@ -1,0 +1,12 @@
+type ProjectEntity {
+  id: ID!
+  tittle: String
+  description: String
+  icon: String
+  status: Boolean
+  requestedDevelopers: [String]
+  developers: [String]
+  createdBy: String
+  updatedAt: String
+  createdAt: String
+}

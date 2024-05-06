@@ -1,0 +1,43 @@
+services:
+  mongodb:
+    image: mongo:latest
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_DATABASE=project-management
+      - MONGO_INITDB_ROOT_PASSWORD=mongopw
+      - MONGO_INITDB_ROOT_USERNAME=mongo
+    ports:
+      - 27017:27017
+
+  validation:
+    image: navin3d/validation-service-reactive-project-management
+    restart: unless-stopped
+    ports:
+      - 8000:8000
+
+  resume:
+    image: navin3d/resume-parser-node:alpine
+    restart: unless-stopped
+    environment:
+      - DATABASE_URL=mongodb://mongo:mongopw@mongodb:27017/project-management?authSource=admin
+    ports:
+      - 3001:3001
+      
+  react:
+    image: navin3d/redux-project-management:vite
+    restart: unless-stopped
+    ports:
+      - 3000:3000
+  
+  # spring-boot:
+  #   image: navin3d/reactive-project-management
+  #   restart: unless-stopped
+  #   environment:
+  #     - SPRING_DATA_MONGODB_HOST=mongodb
+  #     - SPRING_DATA_MONGODB_DATABASE=project-management
+  #     - SPRING_DATA_MONGODB_USERNAME=mongo
+  #     - SPRING_DATA_MONGODB_PASSWORD=mongopw
+  #     - SPRING_DATA_MONGODB_AUTHENTICATIONDATABASE=admin
+  #   ports:
+  #     - 8080:8080
+ 

@@ -1,0 +1,18 @@
+type Project {
+  id: ID!
+  tittle: String
+  description: String
+  icon: String
+  status: Boolean
+  tasks: [TaskEntity]
+  requestedDevelopers: [DeveloperEntity]
+  developers: [DeveloperEntity]
+  createdBy: DeveloperEntity
+  createdAt: String
+}
+
+type Query {
+	project(id: ID): Project
+	projects: [Project]
+	developer(id: ID): Developer
+}

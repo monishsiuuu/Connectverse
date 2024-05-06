@@ -1,0 +1,11 @@
+type DeveloperEntity {
+  id: ID!
+  profilePicUrl: String
+  name: String
+  username: String
+  enabledM2F: Boolean
+  email: String
+  githubProfile: String
+  linkedInProfile: String
+  authProvider: String
+}

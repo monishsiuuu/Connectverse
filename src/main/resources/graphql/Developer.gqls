@@ -1,0 +1,13 @@
+type Developer {
+  id: ID!
+  profilePicUrl: String
+  name: String
+  username: String
+  email: String
+  githubProfile: String
+  linkedInProfile: String
+  tasks: [TaskEntity]
+  projects: [ProjectEntity]
+  requestedProjects: [ProjectEntity]
+  createdProjects: [ProjectEntity]
+}

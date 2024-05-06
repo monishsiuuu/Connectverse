@@ -1,0 +1,544 @@
+{
+	"info": {
+		"_postman_id": "49ed431c-7473-4db9-a949-808c722ea1d7",
+		"name": "Reactive-Project-Management",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17195439"
+	},
+	"item": [
+		{
+			"name": "Project-Service",
+			"item": [
+				{
+					"name": "Create Project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbW5hdmluNjVAZ21pbC5jb20iLCJpYXQiOjE3MDgxNjIxMzcsImV4cCI6MTcwODE3MDc3N30.CGzkDSsl-ACoTAkddxfhyj3V_21O4EWsEqrAS-NUtNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbXByYXY2NWluQGdtaWwuY29tIiwiaWF0IjoxNzA3ODM4MTY2LCJleHAiOjE3MDc4NDY4MDZ9.nuFwtAOHf2ZhDtBKmgMB6vGWvdfeLWtldM90aoklMaQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tittle\": \"Connectverse\",\n    \"description\": \"Welcome to Reactive Programming World of multiple threads.\",\n    \"createdBy\": \"65cb8cf4c1b56520a6045037\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"65c39453df06fb1089112893\",\n    \"tittle\": \"Connectverse\",\n    \"description\": \"Welcome to Reactive Programming World of multiple threads.\",\n    \"createdBy\": \"65c3918dbdd5a6747478d3e1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/project",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Join",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbW5hdmluNjVAZ21pbC5jb20iLCJpYXQiOjE3MDgxNjIxMzcsImV4cCI6MTcwODE3MDc3N30.CGzkDSsl-ACoTAkddxfhyj3V_21O4EWsEqrAS-NUtNE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/65d07caacec0817bf9ef9585/request/65cb8cf4c1b56520a6045037",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"65d07caacec0817bf9ef9585",
+								"request",
+								"65cb8cf4c1b56520a6045037"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reject Join",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/65c39453df06fb1089112893/reject/65c394ebdf06fb1089112894",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"65c39453df06fb1089112893",
+								"reject",
+								"65c394ebdf06fb1089112894"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Accept Join",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/65c39453df06fb1089112893/accept/65c394ebdf06fb1089112894",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"65c39453df06fb1089112893",
+								"accept",
+								"65c394ebdf06fb1089112894"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/project/65c39453df06fb1089112893/true",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"project",
+								"65c39453df06fb1089112893",
+								"true"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth-Service",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"navin\",\n    \"email\": \"smnavin65@gmil.com\",\n    \"password\": \"navin\",\n    \"authProvider\": \"Native\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Complete Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbXByYXY2NWluQGdtaWwuY29tIiwiaWF0IjoxNzA3ODM4MTY2LCJleHAiOjE3MDc4NDY4MDZ9.nuFwtAOHf2ZhDtBKmgMB6vGWvdfeLWtldM90aoklMaQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": \"65cb8cf4c1b56520a6045037\",\n    \"username\": \"S M Navin Durai\",\n    \"profilePicUrl\": \"https://media.licdn.com/dms/image/D5603AQFSV3-E7b4O4Q/profile-displayphoto-shrink_400_400/0/1687549472680?e=1712793600&v=beta&t=nJwOAFdSV_n9eI5bG9b5UHakQRMXiDN-9saJKBeWIe8\",\n    \"githubProfile\": \"https;//github.com/Navin3d\",\n    \"linkedInProfile\": \"https://www.linkedin.com/in/smnavindurai/\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"userName\": \"smnavin65@gmil.com\",\n    \"password\": \"navin\",\n    \"otp\": \"null\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle M2F",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbXByYXY2NWluQGdtaWwuY29tIiwiaWF0IjoxNzA3ODM4MTY2LCJleHAiOjE3MDc4NDY4MDZ9.nuFwtAOHf2ZhDtBKmgMB6vGWvdfeLWtldM90aoklMaQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/auth/65cb8cf4c1b56520a6045037/m2f/true",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"65cb8cf4c1b56520a6045037",
+								"m2f",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Is M2F Enabled",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbW5hdmluNjVAZ21pbC5jb20iLCJpYXQiOjE3MDgxODA4MjksImV4cCI6MTcwODE4OTQ2OX0.2BYeFQA7pAUxLBCYF8JhObYJlLeCUR78QP1IFjNIMgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/auth/smnavin65@gmil.com",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"smnavin65@gmil.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/oauth2/authorization/google",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/oauth2/authorization/google",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"oauth2",
+								"authorization",
+								"google"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Task-Service",
+			"item": [
+				{
+					"name": "Add Comment",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/task/65c3961216c32572520d5ce7/comment/add code quality template",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"task",
+								"65c3961216c32572520d5ce7",
+								"comment",
+								"add code quality template"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Status",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/task/65c3961216c32572520d5ce7/status/true",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"task",
+								"65c3961216c32572520d5ce7",
+								"status",
+								"true"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AssignTask",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tittle\": \"Deploy to Production.\",\n    \"description\": \"Use Openshift and gitlab Pipeline.\",\n    \"deadline\": \"2024-09-09\",\n    \"assignedTo\": \"65cb8cf4c1b56520a6045037\",\n    \"projectId\": \"65cb8e27c1b56520a6045038\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/task",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"task"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GraphService",
+			"item": [
+				{
+					"name": "project",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbW5hdmluNjVAZ21pbC5jb20iLCJpYXQiOjE3MDgxODA4MjksImV4cCI6MTcwODE4OTQ2OX0.2BYeFQA7pAUxLBCYF8JhObYJlLeCUR78QP1IFjNIMgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    project(id: \"65cb8e27c1b56520a6045038\") {\n        id\n        tittle\n        description\n        icon\n        status\n        tasks {\n            id\n            tittle\n            description\n            comments\n            status\n            assignedTo\n            projectId\n            deadline\n            updatedAt\n            createdAt\n        }\n        requestedDevelopers {\n            id\n            profilePicUrl\n            name\n            username\n            enabledM2F\n            email\n            githubProfile\n            linkedInProfile\n            authProvider\n        }\n        developers {\n            id\n            profilePicUrl\n            name\n            username\n            enabledM2F\n            email\n            githubProfile\n            linkedInProfile\n            authProvider\n        }\n        createdBy {\n            id\n            profilePicUrl\n            name\n            username\n            enabledM2F\n            email\n            githubProfile\n            linkedInProfile\n            authProvider\n        }\n        createdAt\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "projects",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbW5hdmluNjVAZ21pbC5jb20iLCJpYXQiOjE3MDgxODA4MjksImV4cCI6MTcwODE4OTQ2OX0.2BYeFQA7pAUxLBCYF8JhObYJlLeCUR78QP1IFjNIMgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    projects {\n        id\n        tittle\n        description\n        icon\n        status\n        tasks {\n            id\n            tittle\n            description\n            comments\n            status\n            assignedTo\n            projectId\n            deadline\n            updatedAt\n            createdAt\n        }\n        requestedDevelopers {\n            id\n            profilePicUrl\n            name\n            username\n            enabledM2F\n            email\n            githubProfile\n            linkedInProfile\n            authProvider\n        }\n        developers {\n            id\n            profilePicUrl\n            name\n            username\n            enabledM2F\n            email\n            githubProfile\n            linkedInProfile\n            authProvider\n        }\n        createdBy {\n            id\n            profilePicUrl\n            name\n            username\n            enabledM2F\n            email\n            githubProfile\n            linkedInProfile\n            authProvider\n        }\n        createdAt\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "developer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzbW5hdmluNjVAZ21pbC5jb20iLCJpYXQiOjE3MDgxODA4MjksImV4cCI6MTcwODE4OTQ2OX0.2BYeFQA7pAUxLBCYF8JhObYJlLeCUR78QP1IFjNIMgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n    developer (id: \"65cb8cf4c1b56520a6045037\") {\n        id\n        profilePicUrl\n        name\n        username\n        email\n        githubProfile\n        linkedInProfile\n        tasks {\n            id\n            tittle\n            description\n        }\n        projects {\n            id\n            tittle\n            description\n        }\n        requestedProjects {\n            id\n            tittle\n            description\n        }\n        createdProjects {\n            id\n            tittle\n            description\n        }\n    }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
